@@ -28,6 +28,7 @@ A simple **Task/bug tracker** app built using **React.js** and **Context API**. 
 ```bash
 git clone https://github.com/your-username/task-tracker-app.git
 cd task-tracker-app
+```
 
 ### 2️⃣ Install Dependencies:
 ```bash
