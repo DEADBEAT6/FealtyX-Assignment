@@ -1,16 +1,12 @@
-// src/context/TaskContext.js
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-// Create the TaskContext
 const TaskContext = createContext();
 
-// Helper function to fetch tasks from localStorage
 const fetchTasksFromLocalStorage = () => {
   const tasks = localStorage.getItem("tasks");
-  return tasks ? JSON.parse(tasks) : []; // Return tasks or an empty array if no tasks exist
+  return tasks ? JSON.parse(tasks) : [];
 };
 
-// Helper function to save tasks to localStorage
 const saveTasksToLocalStorage = (tasks) => {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 };
@@ -18,7 +14,6 @@ const saveTasksToLocalStorage = (tasks) => {
 export const TaskProvider = ({ children }) => {
   const [tasks, setTasks] = useState(fetchTasksFromLocalStorage());
 
-  // Save tasks to localStorage whenever the tasks state changes
   useEffect(() => {
     saveTasksToLocalStorage(tasks);
   }, [tasks]);
@@ -68,5 +63,4 @@ export const TaskProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use TaskContext
 export const useTasks = () => useContext(TaskContext);

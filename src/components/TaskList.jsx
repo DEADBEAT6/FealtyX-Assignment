@@ -13,16 +13,10 @@ const TaskList = () => {
     setSortCriteria(e.target.value);
   };
 
-  // Filter tasks assigned to the current user and assigned by the current user
-  const assignedToMe = tasks.filter(
-    (task) => task.assignee === user.username // Tasks assigned to the user
-  );
+  const assignedToMe = tasks.filter((task) => task.assignee === user.username);
 
-  const assignedByMe = tasks.filter(
-    (task) => task.creator === user.username // Tasks created by the user
-  );
+  const assignedByMe = tasks.filter((task) => task.creator === user.username);
 
-  // Sort tasks based on the selected criteria
   const sortTasks = (tasksList) => {
     return [...tasksList].sort((a, b) => {
       if (sortCriteria === "priority") {

@@ -1,4 +1,3 @@
-// src/components/TaskItem.jsx
 import React, { useEffect, useState } from "react";
 import { useTasks } from "../context/TaskContext";
 import { useAuth } from "../context/AuthContext";
@@ -14,7 +13,6 @@ const TaskItem = ({ task }) => {
     updateTask({ ...task, status: e.target.value });
   };
 
-  // Start or stop timer based on current state
   const handleTimerToggle = () => {
     if (task.timerRunning) {
       stopTimer(task.id);
@@ -24,7 +22,6 @@ const TaskItem = ({ task }) => {
     }
   };
 
-  // Update time display every second if timer is running
   useEffect(() => {
     let interval;
     if (task.timerRunning) {
@@ -38,7 +35,6 @@ const TaskItem = ({ task }) => {
     return () => clearInterval(interval);
   }, [task.timerRunning, task.timeSpent, task.lastStartTime]);
 
-  // Format milliseconds to hours:minutes:seconds
   function formatTime(ms) {
     const seconds = Math.floor((ms / 1000) % 60);
     const minutes = Math.floor((ms / (1000 * 60)) % 60);

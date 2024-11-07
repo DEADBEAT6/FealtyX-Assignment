@@ -1,4 +1,3 @@
-// src/components/LoginForm.jsx
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 
@@ -21,7 +20,10 @@ const LoginForm = () => {
         placeholder="Username"
         required
       />
-      <button type="submit" className="bg-blue-500 text-white p-2 rounded w-full">
+      <button
+        type="submit"
+        className="bg-blue-500 text-white p-2 rounded w-full"
+      >
         Login
       </button>
     </form>
